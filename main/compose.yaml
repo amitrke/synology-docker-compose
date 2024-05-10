@@ -1,0 +1,11 @@
+version: '3.5'
+services:
+  mongo:
+    image: mongo:jammy
+    container_name: mongo
+    restart: unless-stopped
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo/db:/data/db
+    network_mode: bridge
